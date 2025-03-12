@@ -1,0 +1,29 @@
+        {
+		safemyTodoobject.map((item,i) => 	(
+
+          <li key={i}>
+            <h1>{item.name}</h1>
+			 
+			<h1>{item.price}</h1>
+		
+			<h1>subtotal</h1>
+			<h1>{item.Quantityselected}</h1>
+		
+			 <h2>{item.discountPercentage}</h2>
+		
+			 	<h1>itemquantity</h1>
+			 <h1>{item.itemsquanitity}</h1>
+	
+      <img src={item.imagePath} alt={item.name} width="200" />
+	  <img src={item.image} alt={item.name} width="200" />
+		
+			
+          </li>
+		  
+        )
+		 
+		)
+		
+		}
+		
+      </ul>

@@ -1,0 +1,45 @@
+import React from 'react';
+import { useRecoilState } from 'recoil';
+import { myArrayAtom } from './atoms'; // Assuming you have a Recoil atom defined
+import { Table, TableCaption, TableHeader, TableRow, TableCell, TableBody } from './ui/table'; // Assuming you're using a UI library
+
+interface MyObject {
+  id: number;
+  name: string;
+  // other properties...
+}
+
+const MyComponent: React.FC = () => {
+  const [safemymyArrayAtom, setmymyArrayAtom] = useRecoilState<MyObject[]>(myArrayAtom);
+
+  const deletefunction = (v: number) => {
+    const newArray = safemymyArrayAtom.filter(item => item.id !== v);
+    setmymyArrayAtom(newArray);
+  };
+
+  return (
+    <Table>
+      <TableCaption>A list of your recent invoices.</TableCaption>
+      <TableHeader>
+        <TableRow>
+          <TableCell>ID</TableCell>
+          <TableCell>Name</TableCell>
+          <TableCell>Action</TableCell>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {safemymyArrayAtom.map(item => (
+          <TableRow key={item.id}>
+            <TableCell>{item.id}</TableCell>
+            <TableCell>{item.name}</TableCell>
+            <TableCell>
+              <button onClick={() => deletefunction(item.id)}>Delete</button>
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  );
+};
+
+export default MyComponent;

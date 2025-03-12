@@ -1,0 +1,34 @@
+let products: { name: string, price: number, category: string }[] =
+    [
+        {
+            name: 'Laptop',
+            price: 1000,
+            category: 'Electronics'
+        },
+        {
+            name: 'Headphones',
+            price: 100,
+            category: 'Electronics'
+        }
+    ];
+
+// Add a new product to the list
+let newProduct = {
+    name: 'Smartphone',
+    price: 800,
+    category: 'Electronics'
+};
+products
+    .push(newProduct);
+
+// Log the updated list of products
+console.log(products);
+
+Output:
+
+
+[
+  { name: 'Laptop', price: 1000, category: 'Electronics' },
+  { name: 'Headphones', price: 100, category: 'Electronics' },
+  { name: 'Smartphone', price: 800, category: 'Electronics' }
+]
