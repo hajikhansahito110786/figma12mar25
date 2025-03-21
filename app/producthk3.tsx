@@ -43,7 +43,7 @@ return(
    <Link href={`/${data.id}`}    >     <h1>cart here </h1> </Link>
  
   
-  < Image src={data.imageUrl} alt={data.name} width={400} height={400} className="w-full h-full object-fit"  />
+  < Image src={data.imageUrl} alt={data.name} width={400} height={400} className="w-full h-full object-cover"  />
      
    
   
