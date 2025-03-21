@@ -24,24 +24,29 @@ interface Iproduct {
   }`)
 
   return (
-    
-<div className="sm:w-full md:w-full lg:w-[80%] h-full ">
-<div className="w-full sm:h-full md:h-[300px] flex justify-center items-center  mt-10">
+  
+  
+  
+  <div className=" sm:w-ful h-[300px]  flex justify-center mt-8 " >
+  <div className=" bg-red-100 sm:w-full md:w-full lg:w-[80%] h-full flex justify-between ">  
+
+
 
 {
 product.map((data:any,i:number)=>{
 return(
-     <div key={data.id}>
-<ul>
+    
 
-
-  <li key={data.id}>..</li>
-  < Image src={data.imageUrl} alt={data.name} width={200} height={100}  />
-     <h1  >    { data.id } </h1>
-     <h1  >    { data.name } </h1>
-     <h1  >    { data.price } </h1>
+<div key={data.id} className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px] md:w-[400px] md:h-[400px] overflow-hidden">
+<h1  > price  { data.price } </h1>
+   <h1 > { data.name } </h1> 
    <Link href={`/${data.id}`}    >     <h1>cart here </h1> </Link>
-   </ul>
+ 
+  
+  < Image src={data.imageUrl} alt={data.name} width={400} height={400} className="w-full h-full object-fit"  />
+     
+   
+  
           </div>
 )
 })
